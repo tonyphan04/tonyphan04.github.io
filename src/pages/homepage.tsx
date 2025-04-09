@@ -2,6 +2,7 @@ import { CarouselSkills } from "./components/carousel-skills";
 import { Banner } from "./components/banner";
 import { ProjectsSection } from "./components/projects-section";
 import { CareerTimeline } from "./components/career-timeline";
+import { Footer } from "./components/footer";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       </div>
       <ProjectsSection />
       <CareerTimeline />
+      <Footer />
     </div>
   );
 };
