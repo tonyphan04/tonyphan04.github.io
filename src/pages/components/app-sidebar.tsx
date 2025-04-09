@@ -19,8 +19,8 @@ const items = [
     icon: Home,
   },
   {
-    title: "Projects",
-    url: "/projects",
+    title: "Career",
+    url: "/career",
     icon: Inbox,
   },
   {

@@ -23,8 +23,8 @@ const items = [
     icon: Home,
   },
   {
-    title: "Projects",
-    url: "/projects",
+    title: "Career",
+    url: "/career",
     icon: Inbox,
   },
   {
@@ -48,7 +48,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex md:flex-1">
+        <nav className="hidden md:flex md:flex-1 md:flex-end">
           <NavigationMenu>
             <NavigationMenuList>
               {items.map((item) => (
