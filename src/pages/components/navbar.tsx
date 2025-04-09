@@ -1,4 +1,5 @@
 import { Calendar, Home, Inbox, Settings } from "lucide-react";
+import viteLogo from "/vite.svg";
 
 import {
   NavigationMenu,
@@ -42,13 +43,13 @@ const items = [
 export function Navbar() {
   return (
     <header className="border-b">
-      <div className="container flex h-16 items-center px-4">
-        <a href="/" className="mr-6 flex items-center space-x-2">
-          <span className="text-xl font-bold">Portfolio</span>
+      <div className="container flex h-16 items-center justify-between px-4 pl-8">
+        <a href="/" className="flex items-center space-x-2">
+          <img src={viteLogo} className="h-8 w-8" alt="Vite logo" />
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex md:flex-1 md:flex-end">
+        <nav className="hidden md:flex">
           <NavigationMenu>
             <NavigationMenuList>
               {items.map((item) => (
@@ -69,7 +70,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" className="ml-auto">
+            <Button variant="outline" size="icon">
               <Home className="h-4 w-4" />
             </Button>
           </SheetTrigger>

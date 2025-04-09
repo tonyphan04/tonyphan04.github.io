@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 
 export function Banner() {
+  const scrollToProjects = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="w-full bg-white py-16 border-b border-gray-200">
       <div className="container mx-auto px-4">
@@ -26,14 +34,14 @@ export function Banner() {
             </p>
 
             <div className="flex gap-4 pt-4">
-              <motion.a
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="#projects"
+                onClick={scrollToProjects}
                 className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium"
               >
                 View My Work
-              </motion.a>
+              </motion.button>
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
