@@ -17,7 +17,7 @@ export const careerData: CareerItem[] = [
     ],
   },
   {
-    company: "Edtronaut.Ai",
+    company: "Edtronaut.ai",
     role: "Full-stack Software Engineer",
     period: "3/2024 - 12/2024",
     location: "Remote",
