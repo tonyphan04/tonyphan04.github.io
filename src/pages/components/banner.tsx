@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import viteLogo from "/vite.svg";
 
 export function Banner() {
   const scrollToProjects = (e: React.MouseEvent) => {
@@ -62,8 +63,8 @@ export function Banner() {
           >
             <div className="w-64 h-64 md:w-80 md:h-80">
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                alt="TypeScript Logo"
+                src={viteLogo}
+                alt="Vite Logo"
                 className="w-full h-full object-contain"
               />
             </div>
