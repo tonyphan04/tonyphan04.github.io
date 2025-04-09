@@ -11,15 +11,15 @@ export function Banner() {
   };
 
   return (
-    <div className="w-full bg-white py-16 border-b border-gray-200">
+    <div className="w-full bg-white py-24 border-b border-gray-200">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-16 max-w-6xl mx-auto">
           {/* Left Column - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-1 space-y-6"
+            className="flex-1 space-y-8 text-center md:text-left"
           >
             <h1 className="text-5xl font-bold text-black">Hi, I'm Tony</h1>
 
@@ -34,12 +34,12 @@ export function Banner() {
               and innovative solutions.
             </p>
 
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-6 pt-4 justify-center md:justify-start">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToProjects}
-                className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium"
+                className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-medium"
               >
                 View My Work
               </motion.button>
@@ -47,7 +47,7 @@ export function Banner() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="#contact"
-                className="border border-black text-black px-6 py-3 rounded-lg font-medium hover:bg-black hover:text-white transition-colors"
+                className="border border-black text-black px-8 py-3 rounded-lg font-medium hover:bg-black hover:text-white transition-colors"
               >
                 Contact Me
               </motion.a>
@@ -61,7 +61,7 @@ export function Banner() {
             transition={{ duration: 0.8 }}
             className="flex-1 flex justify-center"
           >
-            <div className="w-64 h-64 md:w-80 md:h-80">
+            <div className="w-72 h-72 md:w-96 md:h-96">
               <img
                 src={viteLogo}
                 alt="Vite Logo"
