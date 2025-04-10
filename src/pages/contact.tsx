@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-const Contact2 = () => {
+export function Contact() {
   return (
     <section className="py-32 bg-background text-foreground">
       <div className="container">
@@ -65,6 +65,4 @@ const Contact2 = () => {
       </div>
     </section>
   );
-};
-
-export { Contact2 };
+}

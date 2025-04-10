@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import { AppSidebar } from "@/components/app-sidebar";
 import HomePage from "@/pages/homepage";
-import { Contact2 } from "@/pages/contact-me";
+import { Contact } from "@/pages/contact";
 //import { Navbar } from "@/components/navbar";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/contact" element={<Contact2 />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
       </div>

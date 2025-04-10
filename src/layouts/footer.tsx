@@ -1,5 +1,3 @@
-//import { Github, Linkedin, Instagram, Facebook } from "lucide-react";
-
 export function Footer() {
   return (
     <footer className="w-full bg-background border-t border-border">

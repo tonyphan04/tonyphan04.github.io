@@ -1,7 +1,7 @@
-import { CarouselSkills } from "./components/carousel-skills";
-import { Banner } from "./components/banner";
-import { ProjectsSection } from "./components/projects-section";
-import { CareerTimeline } from "./components/career-timeline";
+import { CarouselSkills } from "@/features/skills/carousel";
+import { Banner } from "@/features/home/banner";
+import { ProjectsSection } from "@/features/projects/section";
+import { CareerTimeline } from "@/features/career/timeline";
 
 const HomePage = () => {
   return (
