@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const Contact2 = () => {
   return (
-    <section className="py-32">
+    <section className="py-32 bg-background text-foreground">
       <div className="container">
         <div className="mx-auto flex max-w-screen-xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
           <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
@@ -36,7 +36,7 @@ const Contact2 = () => {
               </ul>
             </div>
           </div>
-          <div className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg border p-10">
+          <div className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg border p-10 bg-background">
             <div className="flex gap-4">
               <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="firstname">First Name</Label>

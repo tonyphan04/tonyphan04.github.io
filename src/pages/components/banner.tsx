@@ -11,7 +11,7 @@ export function Banner() {
   };
 
   return (
-    <div className="w-full bg-white py-24 border-b border-gray-200">
+    <div className="w-full bg-background py-24 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-16 max-w-6xl mx-auto">
           {/* Left Column - Text Content */}
@@ -21,13 +21,13 @@ export function Banner() {
             transition={{ duration: 0.8 }}
             className="flex-1 space-y-8 text-center md:text-left"
           >
-            <h1 className="text-5xl font-bold text-black">Hi, I'm Tony</h1>
+            <h1 className="text-5xl font-bold text-foreground">Hi, I'm Tony</h1>
 
-            <h2 className="text-2xl text-gray-800">
+            <h2 className="text-2xl text-muted-foreground">
               Full Stack Developer & Creative Problem Solver
             </h2>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               I'm passionate about creating beautiful, functional, and
               user-friendly applications. With expertise in modern web
               technologies, I transform ideas into reality through clean code
@@ -39,7 +39,7 @@ export function Banner() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToProjects}
-                className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-medium"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-medium"
               >
                 View My Work
               </motion.button>
@@ -47,7 +47,7 @@ export function Banner() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="#contact"
-                className="border border-black text-black px-8 py-3 rounded-lg font-medium hover:bg-black hover:text-white transition-colors"
+                className="border border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 Contact Me
               </motion.a>

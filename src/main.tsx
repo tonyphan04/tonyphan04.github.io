@@ -6,11 +6,11 @@ import Layout from "./layout.tsx";
 import { ThemeProvider } from "./components/theme-provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+  <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <StrictMode>
       <Layout>
         <App />
       </Layout>
-    </ThemeProvider>
-  </StrictMode>
+    </StrictMode>
+  </ThemeProvider>
 );
