@@ -3,11 +3,14 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import Layout from "./layout.tsx";
+import { ThemeProvider } from "./components/theme-provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Layout>
-      <App />
-    </Layout>
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <Layout>
+        <App />
+      </Layout>
+    </ThemeProvider>
   </StrictMode>
 );

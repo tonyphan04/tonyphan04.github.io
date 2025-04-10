@@ -1,17 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Moon, Sun, Settings } from "lucide-react";
-import { useTheme } from "next-themes";
+import { Settings } from "lucide-react";
+//import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-
+import { ModeToggle } from "@/components/mode-toggle";
 export function FloatingActionButton() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
@@ -22,18 +17,7 @@ export function FloatingActionButton() {
             isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
-          <Button
-            variant="outline"
-            size="icon"
-            className="h-12 w-12 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
-            onClick={toggleTheme}
-          >
-            {theme === "dark" ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </Button>
+          <ModeToggle />
         </div>
 
         {/* Main Button */}
