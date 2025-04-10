@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/layouts/navbar";
 import { Footer } from "@/layouts/footer";
 //import { Button } from "./components/ui/button";
 import { FloatingActionButton } from "./components/floating-action-button";

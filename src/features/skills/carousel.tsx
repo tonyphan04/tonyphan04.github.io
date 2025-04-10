@@ -4,17 +4,17 @@ import { Card, CardContent } from "@/components/ui/card";
 const skills = [
   {
     title: "Frontend Development",
-    description: "React, TypeScript, Tailwind CSS, Next.js",
+    description: "React, Javascript, TypeScript, Tailwind CSS, Next.js, Redux",
     icon: "💻",
   },
   {
     title: "Backend Development",
-    description: "Node.js, Express, MongoDB, PostgreSQL",
+    description: "Node.js, Express.js, MongoDB, PostgreSQL",
     icon: "⚙️",
   },
   {
     title: "UI/UX Design",
-    description: "Figma, Adobe XD, User Research",
+    description: "Figma, User Research",
     icon: "🎨",
   },
   {
