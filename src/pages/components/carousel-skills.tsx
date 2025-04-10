@@ -33,90 +33,98 @@ const Logos3 = ({
       description: "HTML",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "css",
       description: "CSS",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "javascript",
       description: "JavaScript",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "typescript",
       description: "TypeScript",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "react",
       description: "React",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "nextjs",
       description: "Next.js",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "nodejs",
       description: "Node.js",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "aws",
       description: "AWS",
       image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-      className: "h-8 w-auto",
+        "https://d1.awsstatic.com/logos/aws-logo-lockups/poweredbyaws/PB_AWS_logo_RGB_stacked_REV_SQ.91cd4af40773cbfbd15577a3c2b8a346fe3e8fa2.png",
+      className: "h-16 w-auto",
     },
     {
       id: "mantine",
       description: "Mantine",
       image:
-        "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/mantine-logo-full.svg",
-      className: "h-8 w-auto",
+        "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/static/mantine-logo.svg",
+      className: "h-16 w-auto",
     },
     {
       id: "shadcn",
       description: "Shadcn UI",
       image:
-        "https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/www/public/icon.png",
-      className: "h-8 w-auto",
+        "https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/www/public/logo.svg",
+      className: "h-16 w-auto",
     },
     {
       id: "mui",
       description: "Material UI",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "redux",
       description: "Redux",
       image:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
-      className: "h-8 w-auto",
+      className: "h-16 w-auto",
     },
     {
       id: "zustand",
       description: "Zustand",
-      image: "https://raw.githubusercontent.com/pmndrs/zustand/main/bear.jpg",
-      className: "h-8 w-auto",
+      image:
+        "https://raw.githubusercontent.com/pmndrs/zustand/main/examples/demo/public/logo.svg",
+      className: "h-16 w-auto",
+    },
+    {
+      id: "mongodb",
+      description: "MongoDB",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      className: "h-16 w-auto",
     },
   ],
 }: Logos3Props) => {

@@ -37,8 +37,8 @@ const rightItems = [
     icon: Calendar,
   },
   {
-    title: "Settings",
-    url: "/settings",
+    title: "Blog",
+    url: "/blog",
     icon: Settings,
   },
 ];

@@ -1,4 +1,7 @@
-import { Navbar } from "@/pages/components/navbar";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "./components/footer";
+//import { Button } from "./components/ui/button";
+import { FloatingActionButton } from "./components/floating-action-button";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,6 +10,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="flex-1 flex items-center justify-center">
         {children}
       </main>
+      <Footer />
+      <FloatingActionButton />
     </div>
   );
 }
