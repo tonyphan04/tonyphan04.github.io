@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
-import viteLogo from "/vite.svg";
+import React from "react";
+//import viteLogo from "/vite.svg";
 
-export function Banner() {
+export default function Banner() {
   const scrollToProjects = (e: React.MouseEvent) => {
     e.preventDefault();
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: "smooth" });
+      window.location.hash = "#projects";
     }
   };
 
@@ -46,7 +48,7 @@ export function Banner() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="#contact"
+                href="/contact"
                 className="border border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 Contact Me
@@ -55,7 +57,7 @@ export function Banner() {
           </motion.div>
 
           {/* Right Column - Logo/Image */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -68,7 +70,7 @@ export function Banner() {
                 className="w-full h-full object-contain"
               />
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </div>

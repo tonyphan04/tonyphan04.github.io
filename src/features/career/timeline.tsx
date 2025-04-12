@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useCallback, memo } from "react";
 
 const experiences = [
   {
@@ -48,8 +49,79 @@ const experiences = [
   },
 ];
 
-// Function to highlight technology names
-const highlightTechnologies = (text: string) => {
+// Memoize the ExperienceCard component
+const ExperienceCard = memo(
+  ({
+    experience,
+    index,
+    highlightTechnologies,
+  }: {
+    experience: (typeof experiences)[0];
+    index: number;
+    highlightTechnologies: (text: string) => string;
+  }) => {
+    return (
+      <motion.div
+        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className={`relative flex items-center ${
+          index % 2 === 0 ? "justify-start" : "justify-end"
+        }`}
+      >
+        <div className={`w-1/2 ${index % 2 === 0 ? "pr-6" : "pl-6"}`}>
+          <Card className="hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+            <CardContent className="p-4">
+              <Accordion type="single" collapsible>
+                <AccordionItem value={experience.title} className="border-none">
+                  <AccordionTrigger className="hover:no-underline py-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="text-xl font-bold text-foreground">
+                            {experience.title}
+                          </h3>
+                          <p className="text-base text-muted-foreground">
+                            {experience.company}
+                          </p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-sm font-medium text-primary">
+                            {experience.period}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            {experience.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="grid grid-cols-1 gap-2 mt-2">
+                      {experience.details.map((detail, i) => (
+                        <p
+                          key={i}
+                          className="text-muted-foreground bg-muted/50 p-2 rounded-lg text-sm"
+                          dangerouslySetInnerHTML={{
+                            __html: highlightTechnologies(detail),
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </div>
+      </motion.div>
+    );
+  }
+);
+
+ExperienceCard.displayName = "ExperienceCard";
+
+export function CareerTimeline() {
   const technologies = [
     "NextJS",
     "JavaScript",
@@ -73,18 +145,19 @@ const highlightTechnologies = (text: string) => {
     "Elasticsearch",
   ];
 
-  let highlightedText = text;
-  technologies.forEach((tech) => {
-    const regex = new RegExp(`\\b${tech}\\b`, "gi");
-    highlightedText = highlightedText.replace(
-      regex,
-      `<span class="font-bold">${tech}</span>`
-    );
-  });
-  return highlightedText;
-};
+  // Memoize the highlightTechnologies function
+  const highlightTechnologies = useCallback((text: string) => {
+    let highlightedText = text;
+    technologies.forEach((tech) => {
+      const regex = new RegExp(`\\b${tech}\\b`, "gi");
+      highlightedText = highlightedText.replace(
+        regex,
+        `<span class="font-bold">${tech}</span>`
+      );
+    });
+    return highlightedText;
+  }, []); // Empty dependency array as it doesn't depend on any props or state
 
-export function CareerTimeline() {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -100,64 +173,12 @@ export function CareerTimeline() {
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -ml-0.5"></div>
           <div className="space-y-8">
             {experiences.map((experience, index) => (
-              <motion.div
+              <ExperienceCard
                 key={experience.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "justify-start" : "justify-end"
-                }`}
-              >
-                <div className={`w-1/2 ${index % 2 === 0 ? "pr-6" : "pl-6"}`}>
-                  <Card className="hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-                    <CardContent className="p-4">
-                      <Accordion type="single" collapsible>
-                        <AccordionItem
-                          value={experience.title}
-                          className="border-none"
-                        >
-                          <AccordionTrigger className="hover:no-underline py-2">
-                            <div className="flex flex-col gap-2 w-full">
-                              <div className="flex items-center justify-between">
-                                <div>
-                                  <h3 className="text-xl font-bold text-foreground">
-                                    {experience.title}
-                                  </h3>
-                                  <p className="text-base text-muted-foreground">
-                                    {experience.company}
-                                  </p>
-                                </div>
-                                <div className="text-right">
-                                  <p className="text-sm font-medium text-primary">
-                                    {experience.period}
-                                  </p>
-                                  <p className="text-sm text-muted-foreground">
-                                    {experience.description}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <div className="grid grid-cols-1 gap-2 mt-2">
-                              {experience.details.map((detail, i) => (
-                                <p
-                                  key={i}
-                                  className="text-muted-foreground bg-muted/50 p-2 rounded-lg text-sm"
-                                  dangerouslySetInnerHTML={{
-                                    __html: highlightTechnologies(detail),
-                                  }}
-                                />
-                              ))}
-                            </div>
-                          </AccordionContent>
-                        </AccordionItem>
-                      </Accordion>
-                    </CardContent>
-                  </Card>
-                </div>
-              </motion.div>
+                experience={experience}
+                index={index}
+                highlightTechnologies={highlightTechnologies}
+              />
             ))}
           </div>
         </div>
