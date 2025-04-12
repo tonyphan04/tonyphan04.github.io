@@ -5,10 +5,10 @@ import React from "react";
 export default function Banner() {
   const scrollToProjects = (e: React.MouseEvent) => {
     e.preventDefault();
+    window.location.hash = "#projects";
     const projectsSection = document.getElementById("projects");
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: "smooth" });
-      window.location.hash = "#projects";
     }
   };
 

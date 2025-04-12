@@ -8,17 +8,12 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Banner from "./banner";
 
 describe(Banner, () => {
-  //   it("scroll to projects section when button is clicked", () => {
-  //     render(<Banner />);
-  //     const button = screen.getByRole("button", { name: "View My Work" });
-  //     // Mock scrollIntoView
-  //     const scrollIntoViewMock = jest.fn();
-  //     window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
-
-  //     fireEvent.click(button);
-
-  //     expect(scrollIntoViewMock).toHaveBeenCalled();
-  //   });
+  it("scroll to projects section when button is clicked", () => {
+    render(<Banner />);
+    const button = screen.getByRole("button", { name: "View My Work" });
+    fireEvent.click(button);
+    expect(window.location.hash).toBe("#projects");
+  });
 
   it("scroll to contact section when button is clicked", () => {
     render(<Banner />);
