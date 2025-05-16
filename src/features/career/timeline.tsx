@@ -10,7 +10,7 @@ import { useCallback, memo } from "react";
 
 const experiences = [
   {
-    title: "Frontend dev",
+    title: "Frontend Developer",
     company: "ANSCenter",
     period: "2/2025 - Present",
     description: "Sydney",
