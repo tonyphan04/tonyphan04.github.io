@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from "react";
+//import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import Banner from "./banner";
