@@ -12,4 +12,7 @@ export default defineConfig({
     },
   },
   base: "/portfolio/",
+  build: {
+    outDir: "dist",  // Ensures build files go into 'dist'
+  },
 })
