@@ -16,7 +16,7 @@ const experiences = [
     description: "Sydney",
     details: [
       "Implemented a seamless language-switching feature using i18n, offering superior scalability, dynamic key-based translations, and efficient resource handling compared to other libraries, ensuring improved localization and user experience",
-      "Leveraged useFormik to efficiently manage complex form state, validation, and submission, reducing boilerplatecode and improving maintainability",
+      "Leveraged useFormik to efficiently manage complex form state, validation, and submission, reducing boilerplate code and improving maintainability",
     ],
   },
   {
