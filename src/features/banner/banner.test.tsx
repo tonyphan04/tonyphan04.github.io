@@ -17,7 +17,7 @@ describe(Banner, () => {
 
   it("scroll to contact section when button is clicked", () => {
     render(<Banner />);
-    const link = screen.getByRole("link", { name: "Contact Me" });
+    const link = screen.getByRole("link", { name: /contact me/i });
     fireEvent.click(link);
     expect(link).toHaveAttribute("href", "/contact");
   });
