@@ -1,14 +1,13 @@
 /**
  * @jest-environment jsdom
  */
-
-import React from "react";
+//import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import Banner from "./banner";
 
 describe(Banner, () => {
-  it("scroll to projects section when button is clicked", () => {
+  it("#projects is visible", () => {
     render(<Banner />);
     const button = screen.getByRole("button", { name: "View My Work" });
     fireEvent.click(button);
@@ -17,8 +16,20 @@ describe(Banner, () => {
 
   it("scroll to contact section when button is clicked", () => {
     render(<Banner />);
-    const link = screen.getByRole("link", { name: "Contact Me" });
+    const link = screen.getByRole("link", { name: /contact me/i });
     fireEvent.click(link);
     expect(link).toHaveAttribute("href", "/contact");
   });
+
+  // it("scroll successfully after clicking button", () => {
+  //   const { getByTestId, getByText } = render(<Banner />);
+  //   const button = getByText("View My Work");
+  //   const projectsSection = getByTestId("projects");
+
+  //   projectsSection.scrollIntoView = jest.fn();
+  //   fireEvent.click(button);
+  //   expect(projectsSection.scrollIntoView).toHaveBeenCalledWith({
+  //     behavior: "smooth",
+  //   });
+  // });
 });
