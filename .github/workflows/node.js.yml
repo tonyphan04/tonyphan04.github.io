@@ -5,13 +5,12 @@ name: Node.js CI
 # actions to run workflow
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
-# difine autonomous tasks
+    branches: ["main"]
+# define autonomous tasks
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,12 +19,12 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4 # checkout code
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4 # setup node
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci # clean install: auto update to lastest version of package, not affect to package.json
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v4 # checkout code
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4 # setup node
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci # clean install: auto update to latest version of package, not affect to package.json
+      - run: npm run build --if-present
+      - run: npm test
