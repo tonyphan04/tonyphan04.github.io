@@ -15,5 +15,6 @@
     },
     "noUnusedLocals": false,
     "jsx": "react-jsx",
+    "esModuleInterop": true,
   }
 }
