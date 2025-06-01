@@ -1,8 +1,10 @@
 import { Router } from 'express';
 import BlogController from '../controllers/blogController';
+import { BlogService } from '../services/blogService';
 
 const router = Router();
-const blogController = new BlogController();
+const blogService = new BlogService();
+const blogController = new BlogController(blogService);
 
 export function setBlogRoutes(app: Router) {
     app.post('/api/blog', blogController.createPost.bind(blogController));
