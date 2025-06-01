@@ -8,6 +8,8 @@ interface Blog {
   title: string;
   content: string;
   author: string;
+  tags: string[];
+  createdAt: Date;
 }
 
 const BlogPage: React.FC = () => {
@@ -38,6 +40,7 @@ const BlogPage: React.FC = () => {
     title: string;
     content: string;
     author: string;
+    tags?: string[];
   }) => {
     if (editing) {
       await updatePost(editing._id, data);

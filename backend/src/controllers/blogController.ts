@@ -40,6 +40,17 @@ class BlogController {
         }
     }
 
+    async getPostsByTags(req: Request, res: Response): Promise<void> {
+        try {
+            const tags = req.query.tags ? (Array.isArray(req.query.tags) ? req.query.tags : [req.query.tags]) : [];
+            const stringTags: string[] = tags.map(tag => String(tag));
+            const posts = await this.blogService.fetchPostsByTags(stringTags);
+            res.status(200).json(posts);
+        } catch (error) {
+            res.status(500).json({ message: 'Error fetching posts by tags', error });
+        }
+    }
+
     async updatePost(req: Request, res: Response): Promise<void> {
         try {
             const updatedPost = await this.blogService.modifyPost(req.params.id, req.body);

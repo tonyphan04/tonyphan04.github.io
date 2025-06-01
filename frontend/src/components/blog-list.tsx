@@ -5,6 +5,8 @@ interface Blog {
   title: string;
   content: string;
   author: string;
+  tags: string[];
+  createdAt: Date;
 }
 
 interface BlogListProps {
@@ -23,7 +25,9 @@ const BlogList: React.FC<BlogListProps> = ({ posts, onEdit, onDelete }) => (
       >
         <h3>{post.title}</h3>
         <p>{post.content}</p>
+        <p>{post.tags}</p>
         <small>By {post.author}</small>
+        <p>{post.createdAt.toLocaleString()}</p>
         <br />
         <button onClick={() => onEdit(post)}>Edit</button>
         <button onClick={() => onDelete(post._id)}>Delete</button>

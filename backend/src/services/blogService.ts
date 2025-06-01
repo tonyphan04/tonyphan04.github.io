@@ -10,6 +10,7 @@ export class BlogService {
             title,
             content,
             author,
+            tags: [],
             createdAt: new Date(),
         };
         this.posts.push(newPost);
@@ -22,6 +23,12 @@ export class BlogService {
 
     public fetchPostById(id: string): Blog | undefined {
         return this.posts.find(post => post.id === id);
+    }
+
+    public fetchPostsByTags(tags: string[]): Blog[] {
+        return this.posts.filter(post => 
+            post.tags.some(tag => tags.includes(tag))
+        );
     }
 
     public modifyPost(id: string, updatedData: Partial<Blog>): Blog | undefined {
