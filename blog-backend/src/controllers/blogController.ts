@@ -1,3 +1,6 @@
+import { BlogService } from "../services/blogService";
+import { Request, Response } from "express";
+
 class BlogController {
     private blogService: BlogService;
 
@@ -7,7 +10,8 @@ class BlogController {
 
     async createPost(req: Request, res: Response): Promise<void> {
         try {
-            const post = await this.blogService.savePost(req.body);
+            const { title, content, author } = req.body;
+            const post = await this.blogService.savePost(title, content, author);
             res.status(201).json(post);
         } catch (error) {
             res.status(500).json({ message: 'Error creating post', error });
