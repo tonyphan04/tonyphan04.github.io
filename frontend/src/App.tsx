@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "@/layouts/navbar";
-import { Footer } from "@/layouts/footer";
 import { FloatingActionButton } from "@/components/floating-action-button";
 import HomePage from "@/pages/homepage";
 import AboutPage from "@/pages/about";
@@ -26,7 +25,6 @@ function App() {
             <Route path="/blog" element={<BlogPage />} />
           </Routes>
         </main>
-        <Footer />
         <FloatingActionButton />
       </div>
     </Router>

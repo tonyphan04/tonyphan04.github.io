@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
 import { Link } from "react-router-dom";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 export default function Banner() {
   return (
@@ -33,9 +31,6 @@ export default function Banner() {
                 <span className="text-blue-600 dark:text-blue-400 block">
                   Tony Phan
                 </span>
-                <span className="text-2xl lg:text-3xl font-normal text-gray-600 dark:text-gray-300 block mt-2">
-                  |
-                </span>
               </h1>
             </motion.div>
 
@@ -46,7 +41,7 @@ export default function Banner() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-2xl lg:text-3xl font-medium text-gray-700 dark:text-gray-200 leading-relaxed"
             >
-              Full-Stack Developer & UI/UX Enthusiast
+              Full-Stack Software Engineer
             </motion.h2>
 
             {/* Description */}
@@ -56,8 +51,10 @@ export default function Banner() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl"
             >
-              A Passionate JavaScript Developer With A Love For Creating Dynamic
-              And Interactive Visual Websites And Web Applications.
+              A passionate programmer with full working rights in Australia,
+              specializing in frontend development and progressively expanding
+              into full-stack engineering with .NET and scalable backend
+              systems.
             </motion.p>
 
             {/* Action Buttons */}
@@ -78,56 +75,6 @@ export default function Banner() {
                   Learn More
                 </Link>
               </motion.div>
-
-              <motion.a
-                href="/resume.pdf"
-                target="_blank"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all flex items-center gap-2 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
-              >
-                <Download size={18} />
-                Get Resume
-              </motion.a>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="flex gap-4"
-            >
-              {[
-                {
-                  icon: Github,
-                  href: "https://github.com/tonyphan04",
-                  label: "GitHub",
-                },
-                {
-                  icon: Linkedin,
-                  href: "https://linkedin.com/in/tonyphan04",
-                  label: "LinkedIn",
-                },
-                {
-                  icon: Mail,
-                  href: "mailto:your.email@example.com",
-                  label: "Email",
-                },
-              ].map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-3 rounded-lg bg-gray-100 hover:bg-blue-600 hover:text-white transition-all shadow-md hover:shadow-lg dark:bg-gray-800 dark:hover:bg-blue-600"
-                  aria-label={social.label}
-                >
-                  <social.icon size={20} />
-                </motion.a>
-              ))}
             </motion.div>
           </motion.div>
 
@@ -147,25 +94,25 @@ export default function Banner() {
               </div>
               <pre className="text-sm text-gray-300 font-mono leading-relaxed">
                 {`const profile = {
-    name: 'Tony Phan',
-    title: 'Full-Stack Developer | UI/UX Enthusiast',
-    skills: [
-        'React', 'Next.js', 'TypeScript',
-        'Node.js', 'Express', 'MongoDB',
-        'TailwindCSS', 'Docker', 'AWS'
-    ],
-    hardWorker: true,
-    quickLearner: true,
-    problemSolver: true,
-    yearsOfExperience: 5,
-    hireable: function() {
-        return (
-            this.hardWorker &&
-            this.quickLearner &&
-            this.problemSolver &&
-            this.yearsOfExperience >= 2
-        );
-    }
+  name: 'Tony Phan',
+  title: 'Full-Stack Software Engineer',
+  location: 'Australia',
+  skills: [
+      'TypeScript', 'C#', 'ReactJS', 
+      'ASP.NET', 'Node.js', 'PostgreSQL',
+      'MaterialUI', 'Docker', 'Azure'
+  ],
+  workingRights: 'Full rights in Australia',
+  hardWorker: true,
+  quickLearner: true,
+  problemSolver: true,
+  hireable: function() {
+    return (
+        this.hardWorker &&
+        this.quickLearner &&
+        this.problemSolver
+    );
+  }
 };`}
               </pre>
             </div>

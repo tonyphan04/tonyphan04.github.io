@@ -23,34 +23,64 @@ const skills = [
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Languages & Frameworks",
     skills: [
-      "React",
-      "Next.js",
       "TypeScript",
-      "TailwindCSS",
+      "C#",
       "JavaScript",
-      "HTML5/CSS3",
+      "Python",
+      "ReactJS",
+      "ASP.NET",
+      "Node.js",
+      "Next.js",
     ],
   },
   {
-    title: "Backend",
+    title: "State & UI Management",
     skills: [
-      "Node.js",
-      "Express.js",
-      "Python",
-      "RESTful APIs",
-      "GraphQL",
+      "Zustand",
+      "Material UI",
+      "ShadcnUI",
+      "TailwindCSS",
+      "Redux",
+      "React Hooks",
+    ],
+  },
+  {
+    title: "Databases & APIs",
+    skills: [
+      "Entity Framework",
+      "LINQ",
+      "PostgreSQL",
+      "MongoDB",
+      "SQL Server",
+      "RESTful Services",
+      "OpenAI Integrations",
+    ],
+  },
+  {
+    title: "DevOps & Development",
+    skills: [
+      "Docker",
+      "Git",
+      "GitHub Actions",
+      "Azure",
+      "CI/CD",
+      "TDD",
+      "Clean Architecture",
       "Microservices",
     ],
   },
   {
-    title: "Database",
-    skills: ["MongoDB", "PostgreSQL", "Redis", "Firebase", "SQL", "NoSQL"],
-  },
-  {
-    title: "DevOps & Tools",
-    skills: ["Docker", "AWS", "Git", "CI/CD", "Linux", "VS Code"],
+    title: "Testing & Practices",
+    skills: [
+      "xUnit",
+      "Jest",
+      "Domain-Driven Design",
+      "Event-Driven Architecture",
+      "Code Splitting",
+      "Performance Optimization",
+    ],
   },
 ];
 
@@ -77,7 +107,7 @@ export function CarouselSkills() {
           </motion.div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {skillCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
@@ -135,44 +165,6 @@ export function CarouselSkills() {
                   {skill}
                 </motion.span>
               ))}
-            </div>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
-          >
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-                18+
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">
-                Technologies
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">
-                5+
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">
-                Years Experience
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                20+
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">
-                ∞
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">Learning</div>
             </div>
           </motion.div>
         </div>

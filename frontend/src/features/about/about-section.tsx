@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code, Palette, Lightbulb, Zap } from "lucide-react";
+import { Code, Lightbulb, Zap } from "lucide-react";
 
 export function AboutSection() {
   return (
@@ -17,15 +17,6 @@ export function AboutSection() {
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-8">
               About me
             </h2>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <Code className="text-blue-600" size={32} />
-              <Palette className="text-purple-600" size={32} />
-              <Lightbulb className="text-yellow-600" size={32} />
-              <Zap className="text-green-600" size={32} />
-            </div>
-            <h3 className="text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-200 mb-6">
-              Developer, Designer, Creator, Innovator
-            </h3>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -43,69 +34,37 @@ export function AboutSection() {
                   <strong className="text-blue-600 dark:text-blue-400">
                     Tony Phan
                   </strong>
-                  , a passionate JavaScript developer specializing in creating
-                  innovative web solutions and user-friendly interfaces. Using
-                  React & Next.js Framework, I'm dedicated to simplifying
-                  development workflows.
+                  , a passionate programmer with full working rights in
+                  Australia and a strong foundation in frontend development. My
+                  early experience spans ReactJS, TypeScript, and Material UI,
+                  and I've progressively expanded my expertise into full-stack
+                  engineering, focusing on .NET and scalable backend systems.
                 </p>
 
                 <p>
-                  My focus is on making web development faster, easier, and
-                  accessible to all developers. Currently, I'm expanding into
-                  backend development to grow as a full-stack developer and
-                  create seamless, secure web applications.
+                  My journey from frontend specialist to full-stack developer
+                  has been driven by a deep motivation to build robust,
+                  user-centric applications and solve meaningful technical
+                  challenges. I aspire to grow into a senior full-stack
+                  developer role where I can contribute to projects that push
+                  boundaries and refine my skills.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-6 rounded-xl border-l-4 border-blue-600">
                   <p className="italic text-gray-700 dark:text-gray-200">
-                    "I am a lifelong learner and a dedicated supporter of the
-                    developer community, committed to creating new and effective
-                    tools and ideas to empower developers."
+                    "I actively seek opportunities to join teams that value
+                    collaboration, mentorship, and continuous learning—where
+                    knowledge sharing and tackling innovative problems are part
+                    of the culture."
                   </p>
                 </div>
 
                 <p>
-                  I share this knowledge and experience with my community, so
-                  that we can all move forward together. My goal is to bridge
-                  the gap between complex technical concepts and practical,
-                  real-world applications.
+                  I'm excited to contribute to a friendly and forward-thinking
+                  environment where curiosity is welcomed and growth is
+                  continuous, exploring scalable software architecture and
+                  pushing the boundaries of what's possible.
                 </p>
-              </div>
-
-              {/* Skills Highlights */}
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                    5+
-                  </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">
-                    Years Experience
-                  </div>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-                  <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                    20+
-                  </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">
-                    Projects Completed
-                  </div>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-                  <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                    15+
-                  </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">
-                    Technologies
-                  </div>
-                </div>
-                <div className="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-                  <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
-                    ∞
-                  </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">
-                    Learning
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -123,10 +82,10 @@ export function AboutSection() {
                   <div className="text-white text-center">
                     <Code size={64} className="mx-auto mb-4" />
                     <h4 className="text-xl font-semibold">
-                      Full-Stack Developer
+                      Full-Stack Software Engineer
                     </h4>
                     <p className="text-sm opacity-90">
-                      Creating Digital Solutions
+                      Melbourne, Australia • .NET • ReactJS
                     </p>
                   </div>
 
@@ -144,32 +103,6 @@ export function AboutSection() {
               </div>
             </motion.div>
           </div>
-
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Welcome to my universe
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Let's collaborate and create something amazing together
-              </p>
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl"
-              >
-                Get In Touch
-              </motion.a>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

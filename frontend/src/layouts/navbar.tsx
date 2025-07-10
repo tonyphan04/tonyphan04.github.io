@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { title: "Home", href: "/" },
   { title: "About", href: "/about" },
   { title: "Skills", href: "/skills" },
   { title: "Projects", href: "/projects" },
@@ -26,14 +25,8 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link
-              to="/"
-              className="text-2xl font-bold text-gray-900 dark:text-white"
-            >
-              Hello I'm
-              <span className="text-blue-600 dark:text-blue-400 block text-base font-normal">
-                Tony Phan |
-              </span>
+            <Link to="/" className="flex items-center gap-2">
+              <img src="/vite.svg" alt="Vite" className="w-8 h-8" />
             </Link>
           </motion.div>
 

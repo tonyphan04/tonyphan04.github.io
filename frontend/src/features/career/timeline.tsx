@@ -7,37 +7,37 @@ const experiences = [
     company: "ANSCenter",
     period: "Feb 2025 - Present",
     location: "Sydney, Australia",
-    type: "Full-time",
+    type: "Contract",
     description:
-      "Leading frontend development initiatives with focus on modern web technologies and user experience optimization.",
+      "Developing web applications using ReactJS, TypeScript and MaterialUI to help users remotely configure ANSCenter's AI Box computing hardware.",
     achievements: [
-      "Implemented seamless i18n language-switching feature with superior scalability",
-      "Leveraged useFormik for efficient form state management",
-      "Improved application performance through advanced React optimization techniques",
+      "Developed a web application using ReactJS, TypeScript and MaterialUI for AI Box configuration",
+      "Implemented a scalable language-switching system with i18n, enabling dynamic key-based translations",
+      "Handled complex forms with Formik, streamlining validation and submission across workflows",
     ],
-    technologies: ["React", "TypeScript", "i18n", "Formik", "JavaScript"],
+    technologies: ["ReactJS", "TypeScript", "MaterialUI", "i18n", "Formik"],
   },
   {
-    title: "Full-Stack Software Engineer",
+    title: "Full-stack Software Engineer",
     company: "Edtronaut.ai",
     period: "Mar 2024 - Dec 2024",
     location: "Remote",
-    type: "Full-time",
+    type: "Part-time",
     description:
-      "Developed AI-powered educational platform with comprehensive full-stack solutions and microservices architecture.",
+      "Developed mentor-matching features and AI-powered educational tools using Next.js, JavaScript, and OpenAI GPT-4 API.",
     achievements: [
-      "Built 1:1 mentor matching system using Next.js with server-side rendering optimization",
-      "Developed AI-powered quiz generation feature using OpenAI GPT-4 API, increasing user engagement by 45%",
-      "Implemented microservices architecture with Docker and Kubernetes, reducing deployment time by 63%",
-      "Achieved 90% code coverage with automated testing suites",
+      "Developed a mentor-matching feature using Next.js and JavaScript, leveraging SSR and SSG for performance and SEO",
+      "Built an AI-powered quiz generation feature using OpenAI GPT-4 API with Redis caching, leading to 45% increase in engagement",
+      "Optimized frontend performance through code splitting and lazy loading, reducing initial load times by 15%",
+      "Implemented Zustand for efficient state management and client-side caching, improving API performance",
+      "Maintained high-quality standards with Jest test suites, achieving 90% code coverage",
     ],
     technologies: [
       "Next.js",
-      "Node.js",
+      "JavaScript",
       "OpenAI API",
-      "Docker",
-      "Kubernetes",
       "Redis",
+      "Zustand",
       "Jest",
     ],
   },
@@ -45,14 +45,14 @@ const experiences = [
     title: "Frontend Developer Intern",
     company: "Bluebottle Digital",
     period: "Dec 2022 - Feb 2023",
-    location: "Albert Park, Australia",
-    type: "Internship",
+    location: "Albert Park, VIC",
+    type: "Part-time",
     description:
-      "Specialized in responsive web development and SaaS platform integration with focus on performance optimization.",
+      "Developed high-performance templates using Next.js, TypeScript, and TailwindCSS with focus on component reusability and design conversion.",
     achievements: [
-      "Developed responsive website templates with Next.js and TypeScript, improving load speeds by 32%",
-      "Created reusable UI components with React Hooks, reducing development time by 65%",
-      "Integrated customizable templates into SaaS platform, increasing client satisfaction by 20%",
+      "Developed high-performance templates using Next.js, TypeScript, and TailwindCSS, reducing page load times by 32%",
+      "Created reusable UI components with React Hooks to streamline development",
+      "Converted Figma designs into interactive UIs, collaborating closely with designers",
     ],
     technologies: [
       "Next.js",
@@ -65,17 +65,17 @@ const experiences = [
   {
     title: "Software Engineer Intern",
     company: "ST United",
-    period: "Jun 2022 - Aug 2022",
-    location: "Sydney, Australia",
-    type: "Internship",
+    period: "Feb 2022 - May 2022",
+    location: "Da Nang, Vietnam",
+    type: "Part-time",
     description:
-      "Focused on backend development and API integration with emphasis on scalable solutions.",
+      "Built a job application management system with React, Node.js, and MongoDB, focusing on recruiter workflow optimization.",
     achievements: [
-      "Developed RESTful APIs using Node.js and Express.js for client management system",
-      "Implemented database optimization strategies, improving query performance by 40%",
-      "Created comprehensive API documentation and testing procedures",
+      "Built a job application management system with React, Node.js, and MongoDB, streamlining recruiter workflows",
+      "Designed UI using Ant Design to improve user experience",
+      "Developed secure RESTful APIs and utilized Redux-persist for session management and real-time syncing",
     ],
-    technologies: ["Node.js", "Express.js", "PostgreSQL", "REST APIs", "Git"],
+    technologies: ["React", "Node.js", "MongoDB", "Ant Design", "Redux"],
   },
 ];
 
@@ -197,82 +197,6 @@ export function CareerTimeline() {
               </motion.div>
             ))}
           </div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
-          >
-            <div className="text-center bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-                5+
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">
-                Years Experience
-              </div>
-            </div>
-            <div className="text-center bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
-                4+
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">Companies</div>
-            </div>
-            <div className="text-center bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                20+
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">
-                Technologies
-              </div>
-            </div>
-            <div className="text-center bg-white dark:bg-slate-900 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-              <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">
-                ∞
-              </div>
-              <div className="text-gray-600 dark:text-gray-300">Impact</div>
-            </div>
-          </motion.div>
-
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Ready for the Next Challenge
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                I'm actively seeking new opportunities to contribute to
-                initative projects
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.a
-                  href="#contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
-                >
-                  Let's Connect
-                </motion.a>
-                <motion.a
-                  href="/resume.pdf"
-                  target="_blank"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white"
-                >
-                  Download Resume
-                </motion.a>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
