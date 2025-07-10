@@ -1,124 +1,117 @@
-import { Calendar, Home, Inbox, Settings } from "lucide-react";
-import viteLogo from "/vite.svg";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-
-// Menu items matching sidebar
-const leftItems = [
-  {
-    title: "Home",
-    url: "/",
-    icon: Home,
-  },
-  {
-    title: "Career",
-    url: "/career",
-    icon: Inbox,
-  },
-];
-
-const rightItems = [
-  {
-    title: "Contact",
-    url: "/contact",
-    icon: Calendar,
-  },
-  {
-    title: "Blog",
-    url: "/blog",
-    icon: Settings,
-  },
+const navItems = [
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about" },
+  { title: "Skills", href: "/skills" },
+  { title: "Projects", href: "/projects" },
+  { title: "Experience", href: "/experience" },
+  { title: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
   return (
-    <header className="border-b">
-      <div className="container mx-auto h-16 px-4">
-        <div className="flex h-full items-center justify-center">
-          <div className="flex items-center gap-8">
-            {/* Left Menu Items */}
-            <nav className="hidden md:flex">
-              <NavigationMenu>
-                <NavigationMenuList className="gap-4">
-                  {leftItems.map((item) => (
-                    <NavigationMenuItem key={item.title}>
-                      <NavigationMenuLink
-                        href={item.url}
-                        className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        <item.icon className="mr-2 h-4 w-4" />
-                        <span>{item.title}</span>
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </nav>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link
+              to="/"
+              className="text-2xl font-bold text-gray-900 dark:text-white"
+            >
+              Hello I'm
+              <span className="text-blue-600 dark:text-blue-400 block text-base font-normal">
+                Tony Phan |
+              </span>
+            </Link>
+          </motion.div>
 
-            {/* Center Logo */}
-            <a href="/" className="flex items-center">
-              <img src={viteLogo} className="h-12 w-12" alt="Vite logo" />
-            </a>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Link
+                  to={item.href}
+                  className={`font-medium transition-colors relative group ${
+                    location.pathname === item.href
+                      ? "text-blue-600 dark:text-blue-400"
+                      : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                  }`}
+                >
+                  {item.title}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all ${
+                      location.pathname === item.href
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </Link>
+              </motion.div>
+            ))}
+          </nav>
 
-            {/* Right Menu Items */}
-            <nav className="hidden md:flex">
-              <NavigationMenu>
-                <NavigationMenuList className="gap-4">
-                  {rightItems.map((item) => (
-                    <NavigationMenuItem key={item.title}>
-                      <NavigationMenuLink
-                        href={item.url}
-                        className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        <item.icon className="mr-2 h-4 w-4" />
-                        <span>{item.title}</span>
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </nav>
-
-            {/* Mobile Menu */}
-            <Sheet>
-              <SheetTrigger asChild className="md:hidden">
-                <Button variant="outline" size="icon">
-                  <Home className="h-4 w-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left">
-                <SheetHeader>
-                  <SheetTitle>Menu</SheetTitle>
-                </SheetHeader>
-                <nav className="flex flex-col gap-4 mt-4">
-                  {[...leftItems, ...rightItems].map((item) => (
-                    <a
-                      key={item.title}
-                      href={item.url}
-                      className="flex items-center gap-2 text-sm font-medium"
-                    >
-                      <item.icon className="h-4 w-4" />
-                      {item.title}
-                    </a>
-                  ))}
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+          {/* Mobile Menu Button */}
+          <motion.button
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </motion.button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <motion.nav
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800"
+          >
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  <Link
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`font-medium transition-colors px-2 py-1 block ${
+                      location.pathname === item.href
+                        ? "text-blue-600 dark:text-blue-400"
+                        : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                    }`}
+                  >
+                    {item.title}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.nav>
+        )}
       </div>
     </header>
   );
