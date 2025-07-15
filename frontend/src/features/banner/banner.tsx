@@ -83,7 +83,7 @@ export default function Banner() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:block"
+            className="lg:block"
           >
             <div className="bg-gray-900 dark:bg-gray-800 rounded-xl p-6 shadow-2xl border border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-2 mb-4">
