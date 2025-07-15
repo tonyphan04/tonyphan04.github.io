@@ -3,36 +3,35 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "AI Box Configuration Platform",
+    title: "Personal portfolio",
     description:
-      "Web application built with ReactJS, TypeScript and MaterialUI to help users remotely configure ANSCenter's AI Box computing hardware with powerful AI applications.",
-    technologies: ["ReactJS", "TypeScript", "MaterialUI", "i18n", "Formik"],
-    github: "https://github.com/tonyphan04/ai-box-config",
-    live: "https://ai-box-config.vercel.app",
+      "A personal portfolio website showcasing my skills, projects, and experience, built with React and TypeScript.",
+    technologies: ["ReactJS", "TypeScript", "Motion framer"],
+    github: "https://github.com/tonyphan04/tonyphan04.github.io",
+    live: "https://tonyphan04.github.io",
   },
   {
-    title: "AI-Powered Quiz Generator",
-    description:
-      "Educational platform with mentor-matching and AI-powered quiz generation using OpenAI GPT-4 API, featuring Redis caching and SSR optimization.",
-    technologies: ["Next.js", "JavaScript", "OpenAI API", "Redis", "Zustand"],
-    github: "https://github.com/tonyphan04/ai-quiz-generator",
-    live: "https://ai-quiz-generator.vercel.app",
+    title: "AI-Powered CV analyze",
+    description: `The AICareer & Education Consultant is an AI-powered system designed to help users analyze their resumes, identify areas for improvement,receive personalized careerrecommendations, anddiscoverrelevantlearning
+
+opportunities. It is tailored for job seekers, career shifters,freelancers, and remote workers who need clear, practical, and personalized career guidance.`,
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "OpenAI API",
+      "Tanstack Query",
+    ],
+    github: "https://github.com/hellomentorplus/AIMentorMe",
+    live: "https://ac6cx5fqn3oh.share.zrok.io/",
   },
   {
-    title: "Job Application Management System",
+    title: "Bookshop",
     description:
-      "Comprehensive system built with React, Node.js, and MongoDB to streamline recruiter workflows with secure RESTful APIs and real-time syncing.",
-    technologies: ["React", "Node.js", "MongoDB", "Ant Design", "Redux"],
-    github: "https://github.com/tonyphan04/job-management",
-    live: "https://job-management-demo.vercel.app",
-  },
-  {
-    title: "High-Performance Templates",
-    description:
-      "Responsive website templates built with Next.js, TypeScript, and TailwindCSS, featuring reusable React components and Figma design conversion.",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "React Hooks"],
-    github: "https://github.com/tonyphan04/responsive-templates",
-    live: "https://responsive-templates.vercel.app",
+      "A full-stack bookshop application with a modern UI, built using React and .NET Core, featuring user authentication, product management, and order processing.",
+    technologies: ["React", ".NET", "SQL Server", "LINQ", "Azure"],
+    github: "https://github.com/tonyphan04/Bookshop",
+    live: "",
   },
 ];
 
@@ -99,7 +98,7 @@ export function ProjectsSection() {
                   </p>
 
                   <div className="flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 3).map((tech) => (
+                    {project.technologies.map((tech) => (
                       <span
                         key={tech}
                         className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs"
@@ -107,11 +106,11 @@ export function ProjectsSection() {
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 3 && (
+                    {/* {project.technologies.length > 3 && (
                       <span className="text-gray-500 dark:text-gray-400 text-xs px-1">
                         +{project.technologies.length - 3}
                       </span>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </motion.div>
