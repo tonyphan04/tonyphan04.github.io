@@ -6,7 +6,7 @@ const projects = [
     title: "Personal portfolio",
     description:
       "A personal portfolio website showcasing my skills, projects, and experience, built with React and TypeScript.",
-    technologies: ["ReactJS", "TypeScript", "Motion framer"],
+    technologies: ["ReactJS", "TypeScript", "Motion framer", "GitHub Pages"],
     github: "https://github.com/tonyphan04/tonyphan04.github.io",
     live: "https://tonyphan04.github.io",
   },
@@ -29,8 +29,24 @@ opportunities. It is tailored for job seekers, career shifters,freelancers, and 
     title: "Bookshop",
     description:
       "A full-stack bookshop application with a modern UI, built using React and .NET Core, featuring user authentication, product management, and order processing.",
-    technologies: ["React", ".NET", "SQL Server", "LINQ", "Azure"],
+    technologies: [".NET", "SQL Server", "LINQ", "Azure"],
     github: "https://github.com/tonyphan04/Bookshop",
+    live: "",
+  },
+  {
+    title: "LearningRemind",
+    description:
+      "LearningRemind is a full-stack vocabulary app designed to help users efficiently learn and review words using proven memory techniques",
+    technologies: ["React", "Node.js", "Prisma ORM", "Postgres", "MaterialUI"],
+    github: "https://github.com/tonyphan04/LearningRemind",
+    live: "",
+  },
+  {
+    title: "ApplicationTracker",
+    description:
+      "ApplicationTracker is a Node.js tool that helps you track your job or school applications by connecting to your Gmail account, extracting relevant emails, and saving the application data to a local JSON file",
+    technologies: ["React", "Nodejs", "Google OAuth"],
+    github: "https://github.com/tonyphan04/ApplicationTracker",
     live: "",
   },
 ];

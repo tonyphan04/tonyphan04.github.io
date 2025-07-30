@@ -38,7 +38,8 @@ export function AboutSection() {
                   Australia and a strong foundation in frontend development. My
                   early experience spans ReactJS, TypeScript, and Material UI,
                   and I've progressively expanded my expertise into full-stack
-                  engineering, focusing on .NET and scalable backend systems.
+                  engineering, focusing on .NET, Nodejs and scalable backend
+                  systems.
                 </p>
 
                 <p>
@@ -85,7 +86,7 @@ export function AboutSection() {
                       Full-Stack Software Engineer
                     </h4>
                     <p className="text-sm opacity-90">
-                      Melbourne, Australia • .NET • ReactJS
+                      Melbourne, Australia • .NET • ReactJS • Nodejs
                     </p>
                   </div>
 
