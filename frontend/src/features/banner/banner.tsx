@@ -53,8 +53,8 @@ export default function Banner() {
             >
               A passionate programmer with full working rights in Australia,
               specializing in frontend development and progressively expanding
-              into full-stack engineering with .NET and scalable backend
-              systems.
+              into full-stack engineering with .NET and Node.js and scalable
+              backend systems.
             </motion.p>
 
             {/* Action Buttons */}

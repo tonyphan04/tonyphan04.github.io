@@ -12,9 +12,7 @@ const projects = [
   },
   {
     title: "AI-Powered CV analyze",
-    description: `The AICareer & Education Consultant is an AI-powered system designed to help users analyze their resumes, identify areas for improvement,receive personalized careerrecommendations, anddiscoverrelevantlearning
-
-opportunities. It is tailored for job seekers, career shifters,freelancers, and remote workers who need clear, practical, and personalized career guidance.`,
+    description: `The AICareer & Education Consultant is an AI-powered system designed to help users analyze their resumes, identify areas for improvement, receive personalized career recommendations, and discover relevant learning opportunities. It is tailored for job seekers, career shifters, freelancers, and remote workers who need clear, practical, and personalized career guidance.`,
     technologies: [
       "React",
       "Next.js",
